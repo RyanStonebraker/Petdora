@@ -1,0 +1,131 @@
+@bg-lowfade: #595754;
+@bg-highfade: #e8e5e1;
+@eggshell: #f1ede4;
+
+// ** START MIXIN DECLARATIONS **
+/* Mixin */.transition (@prop: all, @time: 1s, @ease: linear) {
+-webkit-transition: @prop @time @ease;
+-moz-transition: @prop @time @ease;
+-o-transition: @prop @time @ease;
+-ms-transition: @prop @time @ease;
+transition: @prop @time @ease;
+}
+
+/* Mixin */.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @z-index:-10px, @acolor: #ffffff) {
+-webkit-box-shadow: @x @y @blur @z-index @acolor;
+-moz-box-shadow: @x @y @blur @z-index @acolor;
+box-shadow: @x @y @blur @z-index @acolor;
+}
+
+/* Mixin */.border-radius (@radius: 5px) {
+-webkit-border-radius: @radius;
+-moz-border-radius: @radius;
+border-radius: @radius;
+}
+
+/* Mixin */.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+background-color: @start;
+background-image: -webkit-linear-gradient(@origin, @start, @stop);
+background-image: -moz-linear-gradient(@origin, @start, @stop);
+background-image: -o-linear-gradient(@origin, @start, @stop);
+background-image: -ms-linear-gradient(@origin, @start, @stop);
+background-image: linear-gradient(@origin, @start, @stop);
+}
+
+// ** END MIXIN DECLARATIONS **
+
+// Main Styles
+html {
+  .gradient(top, @bg-highfade, @bg-lowfade);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-bacgkround-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+  line-height: 60px;
+  font-family: cursive;
+  font-size: calc(~"4vw + 4vh + 2vmin");
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  background-color: @eggshell;
+}
+
+nav {
+  background-color: white;
+  margin-bottom: 2vh;
+}
+
+nav * {
+  text-decoration: none;
+  color: black;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+nav *:hover {
+  color: red;
+}
+
+.article-head {
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: medium solid #000000;
+  margin: auto;
+  width: 80%;
+  margin-bottom: 2vh;
+}
+
+.center-wrap {
+  background-color: white;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin: auto;
+  width: 70vw;
+  .box-shadow(0, 0.5vw, 5vw, -10px, #000000);
+}
+
+footer {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding-bottom: 0.5vh;
+  padding-top: 0.5vh;
+}
