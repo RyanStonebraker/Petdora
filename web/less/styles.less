@@ -42,6 +42,7 @@ html {
   -moz-background-size: cover;
   -o-bacgkround-size: cover;
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
 
@@ -59,7 +60,7 @@ body {
 h1 {
   margin: 0;
   padding-top: 5vh;
-  padding-bottom: 3vh;
+  padding-bottom: 4vh;
   line-height: 60px;
   font-family: cursive;
   font-size: calc(~"4vw + 4vh + 2vmin");
@@ -83,9 +84,42 @@ header {
   background-color: @eggshell;
 }
 
+header img {
+  width: 8vw;
+  position: absolute;
+  top: 2%;
+  right: 29%;
+}
+
 nav {
   background-color: white;
   margin-bottom: 2vh;
+}
+
+.gap {
+  margin-top: 4vh;
+}
+
+.nav-fixed {
+  animation: 0.2s ease-out 0s 1 opacityDrop;
+  position: fixed;
+  padding-top: 2vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5vh;
+  .box-shadow(0, 0.5vw, 5vw, -10px, #000000);
+}
+
+.fimg {
+  top: 1.5vh;
+  left: 30%;
+  width: 3vw;
+}
+
+.fedimg {
+  right: 30%;
+  width: 3vw;
 }
 
 nav * {
@@ -99,7 +133,37 @@ nav *:hover {
   color: red;
 }
 
+@keyframes lineAnimate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes opacityDropDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes opacityDrop {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 .article-head {
+  animation: 1s ease-out 0s 1 lineAnimate;
   border-style: solid;
   border-top: 0;
   border-left: 0;
@@ -111,10 +175,12 @@ nav *:hover {
 }
 
 .center-wrap {
+  animation: 1s ease-out 0s 1 opacityDropDown;
   background-color: white;
   padding-top: 1vh;
   padding-bottom: 1vh;
   margin: auto;
+  margin-bottom: 5vh;
   width: 70vw;
   .box-shadow(0, 0.5vw, 5vw, -10px, #000000);
 }
@@ -125,7 +191,6 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0;
   padding-bottom: 0.5vh;
   padding-top: 0.5vh;
 }
