@@ -2,6 +2,11 @@
 @bg-highfade: #e8e5e1;
 @eggshell: #f1ede4;
 
+@font-face {
+  font-family: "CUSTOM";
+  src:local("Apple Chancery"), url(AppleChancery.ttf) format("truetype");
+}
+
 // ** START MIXIN DECLARATIONS **
 /* Mixin */.transition (@prop: all, @time: 1s, @ease: linear) {
 -webkit-transition: @prop @time @ease;
@@ -58,12 +63,15 @@ body {
 }
 
 h1 {
+  padding-left: 3vw;
+  vertical-align: middle;
   margin: 0;
-  padding-top: 5vh;
-  padding-bottom: 4vh;
+  padding-top: 30px;
+  padding-bottom: 25px;
   line-height: 60px;
-  font-family: cursive;
-  font-size: calc(~"4vw + 4vh + 2vmin");
+  display: inline-block;
+  font-family: "CUSTOM";
+  font-size: calc(~"4vw + 40px");
 }
 
 h2 {
@@ -84,42 +92,55 @@ header {
   background-color: @eggshell;
 }
 
-header img {
+.logo {
+  display: inline-block;
+  vertical-align: middle;
   width: 8vw;
-  position: absolute;
-  top: 2%;
-  right: 29%;
+  margin-left: 2vw;
 }
 
 nav {
   background-color: white;
-  margin-bottom: 2vh;
-}
-
-.gap {
-  margin-top: 4vh;
+  margin-bottom: 15px;
 }
 
 .nav-fixed {
+  vertical-align: middle;
   animation: 0.2s ease-out 0s 1 opacityDrop;
   position: fixed;
-  padding-top: 2vh;
   top: 0;
   left: 0;
   right: 0;
-  height: 5vh;
+  height: 40px;
   .box-shadow(0, 0.5vw, 5vw, -10px, #000000);
 }
 
 .fimg {
-  top: 1.5vh;
-  left: 30%;
-  width: 3vw;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  display: inline-block;
+  width: 40px;
 }
 
 .fedimg {
-  right: 30%;
-  width: 3vw;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  display: inline-block;
+  width: 40px;
+}
+
+article img {
+  width: 70%;
+}
+
+.signin {
+  position: absolute;
+  right: 0;
+  vertical-align: middle;
+  padding-left: 3%;
+  border-left: thin solid #dee0e2;
 }
 
 nav * {
@@ -175,13 +196,19 @@ nav *:hover {
 }
 
 .center-wrap {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 70vw;
+}
+
+article {
+  margin-bottom: 3vh;
+  padding-top: 1vh;
+  padding-left: 7vw;
+  padding-right: 7vw;
+  padding-bottom: 1vh;
   animation: 1s ease-out 0s 1 opacityDropDown;
   background-color: white;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  margin: auto;
-  margin-bottom: 5vh;
-  width: 70vw;
   .box-shadow(0, 0.5vw, 5vw, -10px, #000000);
 }
 
@@ -193,4 +220,17 @@ footer {
   right: 0;
   padding-bottom: 0.5vh;
   padding-top: 0.5vh;
+}
+
+@media screen and (max-width: 640px) {
+  .fedimg {
+    visibility:hidden;
+  }
+  .signin {
+    border: none;
+  }
+  nav * {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+  }
 }

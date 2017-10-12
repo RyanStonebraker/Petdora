@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petdora | For all your fedora wearing pet needs.</title>
     <link rel="stylesheet" href="css/styles.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script type="text/javascript">
       var scrollStatus = false;
       $(document).ready(function() {
         $(window).scroll(function () {
-            console.log($(window).scrollTop())
           if ($(window).scrollTop() > 115 && scrollStatus) {
             $('nav').addClass('nav-fixed');
-            $('.nav-fixed').append("<img src=\"img/cat.png\" class = \"fimg\":></img>");
-            $('.nav-fixed').append("<img src=\"img/fedora.png\" class = \"fedimg\":></img>");
-            $('body').addClass('gap');
+            $('nav').prepend("<img src=\"img/cat.png\" class = \"fimg\"></img>");
+            $('nav').append("<img src=\"img/fedora.png\" class = \"fedimg\"></img>");
+            $('.signin').css('top', '10px');
             scrollStatus = false;
           }
           if ($(window).scrollTop() < 116 && !scrollStatus) {
             $('.fimg').remove();
+            $('.fedimg').remove();
             $('nav').removeClass('nav-fixed');
-            $('body').removeClass('gap');
+            $('.signin').css('top', '');
             scrollStatus = true;
           }
         });
@@ -32,25 +33,37 @@
   </head>
   <body>
     <header>
-      <h1>Petdora</h1> <img src = "img/logo.png"></img>
+      <h1>Petdora</h1><img src = "img/logo.png" class = "logo"></img>
       <nav>
         <a href = "./index.html">Home</a>
         <a href = "./products.html">Products</a>
-        <a href = "./contact.html">Contact Us</a>
+        <a href = "./game.html">Game</a>
+        <a href = "./contact.html">Contact</a>
+        <a href = "./login.html" class = "signin">Sign In</a>
       </nav>
     </header>
 
     <section class = "center-wrap">
-      <article class = "item-post">
-        <h2>This Pet Wears a Fedora</h2>
+      <article>
+        <h2>Welcome to Petdora!</h2>
         <div class = "article-head"></div>
+        Petdora is an online company selling fashionable pets wearing exclusive fedoras.
+        Browse our luxurious products or play our brand new game! If you like our site,
+        buy a premium account for a wider selection of pets and fedoras! Feel free to
+        contact us any time with any questions or concerns, all feedback is stored
+        locally on our server and checked by a human every day!
+        </br>
         <img src = "https://i.pinimg.com/736x/54/c3/4e/54c34e1b6a6aa1fd8f20ebb207795180--top-hats-adorable-kittens.jpg"></img>
         </br>
-        Pictures </br>
-        Picture of Fedora</br>
-        Picture of Cat </br>
-        Picture of Cat Wearing Fedora </br>
-        Picture
+      </article>
+
+      <article class = "item-post">
+        <h2>New Game Posted!</h2>
+        <div class = "article-head"></div>
+        The person with the highest score will receive a free limited edition Trilby Fedora!
+        </br>
+        <img src = "https://futureworldblog.files.wordpress.com/2013/07/fedora-vs-trilby.jpg"></img>
+        </br>
       </article>
     </section>
 
@@ -58,5 +71,6 @@
       <h3>Ryan Stonebraker &copy; 2017 </h3>
     </footer>
 
+    <script src="js/sign_on.js"></script>
   </body>
 </html>
