@@ -8,28 +8,8 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-      var scrollStatus = false;
-      $(document).ready(function() {
-        $(window).scroll(function () {
-          if ($(window).scrollTop() > 115 && scrollStatus) {
-            $('nav').addClass('nav-fixed');
-            $('nav').prepend("<img src=\"img/cat.png\" class = \"fimg\"></img>");
-            $('nav').append("<img src=\"img/fedora.png\" class = \"fedimg\"></img>");
-            $('.signin').css('top', '10px');
-            scrollStatus = false;
-          }
-          if ($(window).scrollTop() < 116 && !scrollStatus) {
-            $('.fimg').remove();
-            $('.fedimg').remove();
-            $('nav').removeClass('nav-fixed');
-            $('.signin').css('top', '');
-            scrollStatus = true;
-          }
-        });
-      });
-    </script>
+    <script type="text/javascript" src="js/onload_nav.js"></script>
+    <script type = "text/javascript" src = "js/static_cms.js"></script>
   </head>
   <body>
     <header>
@@ -39,32 +19,11 @@
         <a href = "./products.html">Products</a>
         <a href = "./game.html">Game</a>
         <a href = "./contact.html">Contact</a>
-        <a href = "./login.html" class = "signin">Sign In</a>
+        <a href = "?" class = "signin">Sign In</a>
       </nav>
     </header>
 
     <section class = "center-wrap">
-      <article>
-        <h2>Welcome to Petdora!</h2>
-        <div class = "article-head"></div>
-        Petdora is an online company selling fashionable pets wearing exclusive fedoras.
-        Browse our luxurious products or play our brand new game! If you like our site,
-        buy a premium account for a wider selection of pets and fedoras! Feel free to
-        contact us any time with any questions or concerns, all feedback is stored
-        locally on our server and checked by a human every day!
-        </br>
-        <img src = "https://i.pinimg.com/736x/54/c3/4e/54c34e1b6a6aa1fd8f20ebb207795180--top-hats-adorable-kittens.jpg"></img>
-        </br>
-      </article>
-
-      <article class = "item-post">
-        <h2>New Game Posted!</h2>
-        <div class = "article-head"></div>
-        The person with the highest score will receive a free limited edition Trilby Fedora!
-        </br>
-        <img src = "https://futureworldblog.files.wordpress.com/2013/07/fedora-vs-trilby.jpg"></img>
-        </br>
-      </article>
     </section>
 
     <footer>
@@ -72,5 +31,8 @@
     </footer>
 
     <script src="js/sign_on.js"></script>
+    <script type = "text/javascript">
+      var load_CMS = new static_cms_load("home_entries");
+    </script>
   </body>
 </html>
