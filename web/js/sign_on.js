@@ -13,7 +13,6 @@ $(document).ready(function() {
         }
       }
     }
-    console.log(validID);
     if (validID) {
       $('.signin').remove();
       $('nav').append('<a class = "signin">' + "Welcome " + stored_cookie[0] + '!</a>');
