@@ -1,6 +1,23 @@
 # Petdora
 ***
-A Fedora wearing Pet Webstore for Fedora, integrating with a NO-SQL Database for a Cyber Security exercise.
+A vulnerable Fedora wearing Pet Webstore for Fedora that will integrate with a NO-SQL Database for a Cyber Security exercise.
+
+## Installation
+***
+As of current, Petdora can be run by cloning the repository and then running:
+
+Linux:
+```
+cd %HOME_DIR%\Petdora\web\
+sudo apt-install php
+php -S localhost:8080
+```
+
+Mac:
+```
+cd %HOME_DIR%\Petdora\web\
+php -S localhost:8080
+```
 
 ## Current Features:
 ***
