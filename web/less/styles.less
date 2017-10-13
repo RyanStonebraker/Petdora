@@ -1,13 +1,18 @@
+// *** START VARIABLES ***
 @bg-lowfade: #595754;
 @bg-highfade: #e8e5e1;
 @eggshell: #f1ede4;
+
+@login-width: 300px;
+@login-height: 350px;
 
 @font-face {
   font-family: "CUSTOM";
   src:local("Apple Chancery"), url(AppleChancery.ttf) format("truetype");
 }
+// *** END VARIABLES ***
 
-// ** START MIXIN DECLARATIONS **
+// *** START MIXIN DECLARATIONS ***
 /* Mixin */.transition (@prop: all, @time: 1s, @ease: linear) {
 -webkit-transition: @prop @time @ease;
 -moz-transition: @prop @time @ease;
@@ -37,10 +42,9 @@ background-image: -ms-linear-gradient(@origin, @start, @stop);
 background-image: linear-gradient(@origin, @start, @stop);
 }
 
-// ** END MIXIN DECLARATIONS **
+// *** END MIXIN DECLARATIONS ***
 
-
-// ** START KEY FRAMES **
+// *** START KEY FRAMES ***
 @keyframes opacityDropDown {
   0% {
     opacity: 0%;
@@ -61,9 +65,18 @@ background-image: linear-gradient(@origin, @start, @stop);
   }
 }
 
-// ** END KEY FRAMES **
+@keyframes lineAnimate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
 
-// Main Styles
+// *** END KEY FRAMES ***
+
+// *** START MAIN STYLES ***
 html {
   .gradient(top, @bg-highfade, @bg-lowfade);
   background-repeat: no-repeat;
@@ -85,6 +98,20 @@ body {
   padding: 0;
   margin: 0;
 }
+
+footer {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0.5vh;
+  padding-top: 0.5vh;
+}
+
+// *** END MAIN STYLES ***
+
+// *** START FONT STYLES ***
 
 h1 {
   padding-left: 3vw;
@@ -109,6 +136,10 @@ h3 {
   color: white;
   font-size: 12px;
 }
+
+// *** END FONT STYLES ***
+
+// *** START TOP HEADER STYLES ***
 
 header {
   margin: 0;
@@ -157,12 +188,20 @@ nav {
   width: 40px;
 }
 
-article img {
-  width: 70%;
+nav * {
+  text-decoration: none;
+  color: black;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
-@login-width: 300px;
-@login-height: 350px;
+nav *:hover {
+  color: red;
+}
+
+// *** END TOP HEADER STYLES ***
+
+// *** START LOGIN STYLES ***
 
 .login_focus h2 {
   font-family: "CUSTOM", cursive, Verdana;
@@ -189,8 +228,8 @@ article img {
 .login_focus input {
   display: inline-block;
   margin: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  // margin-top: 5vh;
+  // margin-bottom: 5vh;
 }
 
 .login_disappear {
@@ -222,10 +261,14 @@ article img {
 
 .login_focus input[type="text"] {
   width: 175px;
+  margin-bottom: 25%;
+  margin-top: 5%:
+
 }
 
 .login_focus input[type="password"] {
   width: 175px;
+  margin-bottom: 10%;
 }
 
 .faded_overlay {
@@ -249,25 +292,9 @@ article img {
   border-left: thin solid #dee0e2;
 }
 
-nav * {
-  text-decoration: none;
-  color: black;
-  margin-left: 3vw;
-  margin-right: 3vw;
-}
+// *** END LOGIN STYLES ***
 
-nav *:hover {
-  color: red;
-}
-
-@keyframes lineAnimate {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 80%;
-  }
-}
+// *** START ARTICLE CONTENT STYLES ***
 
 .article-head {
   animation: 1s ease-out 0s 1 lineAnimate;
@@ -279,6 +306,10 @@ nav *:hover {
   margin: auto;
   width: 80%;
   margin-bottom: 2vh;
+}
+
+article img {
+  width: 70%;
 }
 
 .center-wrap {
@@ -298,18 +329,10 @@ article {
   .box-shadow(0, 0.5vw, 5vw, -10px, #000000);
 }
 
-footer {
-  background-color: black;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-bottom: 0.5vh;
-  padding-top: 0.5vh;
-}
+// *** END ARTICLE CONTENT STYLES ***
 
+// *** START MEDIA SCREENS ***
 
-// ** Media Screens **
 @media screen and (max-width: 640px) {
   .fedimg {
     visibility:hidden;
@@ -328,3 +351,5 @@ footer {
     visibility: hidden;
   }
 }
+
+// *** END MEDIA SCREENS ***

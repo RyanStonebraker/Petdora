@@ -21,7 +21,7 @@ $(document).ready(function() {
 
       // TODO: REPLACE with more content for final
       var secretText = "These are secret premium features that can ONLY be accessed \
-      with a purchased account...\
+      with a purchased account...</br>\
       <img src=\"https://kahanelaw.com/wp-content/uploads/2016/02/Cat-Helps-Drug-Dealer.jpg\"style=\"width:50%;\"></img>";
 
       $('.center-wrap').append("<article><h2>Secret Premium Account Features!</h2>\
