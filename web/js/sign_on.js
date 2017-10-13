@@ -1,17 +1,19 @@
 $(document).ready(function() {
 
   var stored_cookie = Cookies.get('PETDORA_USER_ACCOUNT');
-  if (stored_cookie) {
-  stored_cookie = stored_cookie.split(',');
+
   validID = jQuery.get('../php/accounts.txt', function(data){
     var validID = false;
     var splitInfo = data.split("\n");
-    for (var i = 0; i < splitInfo.length; ++i) {
-      if (stored_cookie[1] == splitInfo[i]) {
-        validID = true;
+    if (stored_cookie) {
+      stored_cookie = stored_cookie.split(',');
+      for (var i = 0; i < splitInfo.length; ++i) {
+        if (stored_cookie[1] == splitInfo[i]) {
+          validID = true;
+        }
       }
     }
-
+    console.log(validID);
     if (validID) {
       $('.signin').remove();
       $('nav').append('<a class = "signin">' + "Welcome " + stored_cookie[0] + '!</a>');
@@ -54,5 +56,4 @@ $(document).ready(function() {
     }
 
   });
-  }
 });
