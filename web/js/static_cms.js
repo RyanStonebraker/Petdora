@@ -10,15 +10,22 @@ static_cms_load.prototype.getEntries = function (folder) {
   $(document).ready(function () {
       jQuery.get(folder, function(data) {
       var rawText = data;
-      while (rawText.search('<li>') != -1) {
+      var counter = 0;
+
+      // LIMITS THE NUMBER OF ENTRIES TO 10,000
+      while (rawText.search('<li>') != -1 && counter < 10000) {
+        ++counter;
         var entrStart = rawText.search("<li>");
         var entrEnd = rawText.search("</a>");
 
         var entr = rawText.substr(entrStart, entrEnd-entrStart);
         entr = (entr.substr(entr.search("\">")+2));
-
+        if (entr == "index.php") {
+          rawText = rawText.substr(entrEnd+4);
+          continue
+        }
         static_cms_load.prototype.getEntry(folder + entr);
-        
+
         rawText = rawText.substr(entrEnd+4);
       }
       });
