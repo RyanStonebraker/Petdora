@@ -1,10 +1,5 @@
 <?php
-// Common approach is to just store a hashed/salted version of username
-// w/ip-address to give appearance of persistent login, but then when the user
-// tries to make a change, they are prompted to login again and then a
-// non-persistent authenticated cookie is sent to the server.
 
-// CAN DELETE, JUST FOR TESTING PURPOSES
 ob_start();
 
 session_start();

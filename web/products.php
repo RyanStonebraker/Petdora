@@ -18,7 +18,7 @@
       <h1>Petdora</h1><img src = "img/logo.png" class = "logo"></img>
       <nav>
         <a href = "./index.html">Home</a>
-        <a href = "./products.html">Products</a>
+        <a href = "./products.php">Products</a>
         <a href = "./game.html">Game</a>
         <a href = "./contact.html">Contact</a>
         <a class = "signin">Sign In</a>
@@ -32,9 +32,9 @@
       <h3>Ryan Stonebraker &copy; 2017 </h3>
     </footer>
 
-    <script src="js/sign_on.js"></script>
+    <script src="js/frontendLoader.js"></script>
     <script type = "text/javascript">
-      var load_CMS = new static_cms_load("prod_entries");
+      var load_CMS = new frontend_load();
     </script>
   </body>
 </html>
