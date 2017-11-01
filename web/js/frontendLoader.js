@@ -5,7 +5,7 @@ function frontend_load() {
 frontend_load.prototype.getContent = function() {
   $.ajax({
     type: 'get',
-    url: 'http://0.0.0.0:8383/',
+    url: 'http://localhost:8383/products',
     success: function (data) {
       var linesep = "<div class = \"article-head\"></div>";
       var jsonObj = "[" + data + "]";
